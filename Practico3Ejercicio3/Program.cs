@@ -12,7 +12,27 @@
                 nulo), si es grupal y cantidad de profesores (debe ser mayor a 0). 
             **/
 
+            try
+            {
+                var deporte = new Deporte("Fútbol", true, 2);
 
+                deporte.Validar();
+
+                Console.WriteLine("Costo del deporte: $" + deporte.CalcularCosto());
+
+                var fechaNacimientoSocio = new DateTime(1990, 5, 15);
+
+                var socio = new Socio("Juan", "Pérez", fechaNacimientoSocio);
+
+                socio.Validar();
+
+                Console.WriteLine("¿Es mayor de edad? " + socio.EsMayorDeEdad());
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+            }
+            
         }
     }
 }
